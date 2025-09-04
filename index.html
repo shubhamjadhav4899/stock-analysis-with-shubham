@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Analysis Dashboard</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Stock Analysis Dashboard</h1>
+        <p>Real-time insights powered by Gemini</p>
+      </header>
+      <main>
+        <div class="panels-container">
+          <div class="panel" id="chart-panel">
+            <h2>Historic Chart Analysis</h2>
+            <form id="chart-form">
+              <input type="text" id="chart-stock-input" placeholder="Enter stock ticker (e.g., RELIANCE)" required>
+              <button type="submit" id="chart-search-button">Get Analysis</button>
+            </form>
+            <div class="output-container" id="chart-output-container" role="status" aria-live="polite">
+              <!-- Loader and content will be injected here -->
+            </div>
+          </div>
+          <div class="panel" id="financials-panel">
+            <h2>Financial Details</h2>
+            <form id="financials-form">
+              <input type="text" id="financials-stock-input" placeholder="Enter stock ticker (e.g., TCS)" required>
+              <button type="submit" id="financials-search-button">Get Details</button>
+            </form>
+            <div class="output-container" id="financials-output-container" role="status" aria-live="polite">
+               <!-- Loader and content will be injected here -->
+            </div>
+          </div>
+        </div>
+        <div class="panel" id="news-panel">
+          <h2>Trending News: Indian Stock Market</h2>
+          <div class="output-container" id="news-output-container" role="status" aria-live="polite">
+            <!-- Loader and content will be injected here -->
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>
